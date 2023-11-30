@@ -1,0 +1,17 @@
+<!--calculator-->
+<div class="container">
+  <h1>Angular v17 Calculator</h1>
+  <!-- Use two-way binding for the input variables -->
+  <input type="number" [(ngModel)]="a" />
+  <!-- Use a select element for the operation -->
+  <select [(ngModel)]="operation">
+    @for (op of operations;track operation;) {
+      <option>{{ op }}</option>
+    }
+  </select>
+  <input type="number" [(ngModel)]="b" />
+  <!-- Use event binding to call the calculate method -->
+  <button (click)="calculate()">=</button>
+  <!-- Display the result -->
+  <span>{{ result }}</span>
+</div>
