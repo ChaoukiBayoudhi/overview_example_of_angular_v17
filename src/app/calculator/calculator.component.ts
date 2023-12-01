@@ -10,30 +10,32 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
   styleUrl: './calculator.component.css'
 })
 export class CalculatorComponent {
+//declare the title
+title: string = 'Simple Calculator';
 // Declare the input variables
-a: number = 0;
-b: number = 0;
+x: number = 0;
+y: number = 0;
 // Declare the output variable
 result: number = 0;
-// Declare the select options
+// Declare the select options(an array of strings)
 operations: string[] = ['+', '-', '*', '/'];
 // Declare the selected operation
 operation: string = '+';
 
 // Define a method to calculate the result
-calculate() {
+calculate(): void {
   switch (this.operation) {
     case '+':
-      this.result = this.a + this.b;
+      this.result = this.x + this.y;
       break;
     case '-':
-      this.result = this.a - this.b;
+      this.result = this.x - this.y;
       break;
     case '*':
-      this.result = this.a * this.b;
+      this.result = this.x * this.y;
       break;
     case '/':
-      this.result = this.a / this.b;
+      this.result = this.x / this.y;
       break;
     default:
       this.result = 0;
